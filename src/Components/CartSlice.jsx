@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-
 const initialState = {
 	cartItems: []
 }
@@ -14,7 +13,7 @@ const CartSlice = createSlice({
 			if (existingItem) {
 				existingItem.quantity += 1;
 			} else {
-				state.cartItems.push({ ...action.payload.id, quantity: 1 });
+				state.cartItems.push({ ...action.payload, quantity: 1 });
 			}
 		},
 		removeItemFromCart(state, action) { //removes an item from cart
